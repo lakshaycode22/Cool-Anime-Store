@@ -113,7 +113,7 @@ const ProductDetails = () => {
             {/* <!-- Preview Images Div For larger Screen--> */}
             <div className="lg:w-2/5">
               <div className="lg:my-8">
-                <div className="bg-gray-200 mx-auto rounded-md md:w-96 md:h-96  w-72 h-72">
+                <div className="bg-gray-200 mx-auto rounded-md md:w-96 md:h-96  w-72 h-full">
                   <Carousel>
                     {product.images &&
                       product.images.map((item, i) => (
