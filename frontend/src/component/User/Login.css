@@ -1,0 +1,8 @@
+.login-bg {
+    background-image: url("../../assets/login.jpg");
+    background-size: cover;
+  }
+.myprofile-bg {
+  background-image: url("../../assets/myprofile.jpg");
+  background-size: cover;
+}
