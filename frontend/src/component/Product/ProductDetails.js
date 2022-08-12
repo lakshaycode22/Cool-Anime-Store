@@ -32,6 +32,8 @@ const ProductDetails = () => {
   const { id } = useParams();
   const alert = useAlert();
 
+  const { user } = useSelector((state) => state.user);
+
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
@@ -61,14 +63,18 @@ const ProductDetails = () => {
   const reviews = product.reviews;
 
   const addToCartHandler = () => {
-    if(quantity < 1){
-      alert.error("Please increase product quantity")
+    if (quantity < 1) {
+      alert.error("Please increase product quantity");
       return;
     }
     dispatch(addItemsToCart(id, quantity));
     alert.success("Item Added To Cart");
   };
   const submitReviewToggle = () => {
+    if (user._id === "62f2bc6ff2c1afc0dcc0fb10") {
+      alert.error("Guests cant submit reveiw");
+      return;
+    }
     open ? setOpen(false) : setOpen(true);
   };
 
